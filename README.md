@@ -1,132 +1,48 @@
-# HTML5 Semantic Elements
 
-## Problem Statement
+# HTML Links - Lab
 
-We have `div` elements to organize and label sections of HTML. But too many
-`div` tags makes our HTML document look cluttered and confusing. Even when we
-identify or classify them with specific names, it's a lot to keep track of. It
-would be clearer for both developers and browsers if we could use more
-descriptive HTML elements to arrange our content. That's where semantic
-elements come in. They allow us to say, "this isn't _just_ a division of text,
-it's a _header_." We'll learn more about these _semantic_ elements in this
-lesson.
+## Introduction
+We've got our HTML tags and we've got our HTML tag attributes. How do we use them together? We can figure it out by exploring the `a` tag and creating a link. In this lab, you'll do just that.
 
 ## Objectives
+You will be able to:
+* Code an `a`nchor tag that defines an HTML hyperlink
 
-1. Explain the historical reasoning behind semantic elements
-2. Demonstrate HTML5 semantic element use
+## Use a `a` Tag to Create a Link
 
-## Explain the Historical Reasoning Behind Semantic Elements
+Open `index.html` in your text editor. Add an `a` tag with the inner text (the
+text between the `<a>` tag and the `</a>` tag) of
+`Flatiron School` anywhere in the file. Then set the `href` attribute of your
+new link element to `https://flatironschool.com`.
 
-When developers first began defining containers to structure HTML, they had only
-one generic element available to them: the `div`. Creating complex page layouts
-then required dozens of `div` elements that were often difficult to organize or
-locate within the code. HTML authors needed a way to distinguish one `div` from another,
-which led to `id` and `class` attributes on elements being misused in an attempt
-to communicate what the `div` was doing. For example, a document usually has
-only one header, so it seemed sensible to write `div id="header"` as a way to
-say something stronger than, "this is a text division." Developers wanted to
-say, "this is a special division of introduction," but lacked the specific language
-to express it. They wanted those sections to have a _semantic meaning_ (more on that later). But the
-HTML language simply didn't have the ability to meet this need.
+You can run the tests with this lab via `learn`. Make sure you save the file
+before running the test suite. Failing tests will provide helpful error messages
+that you can use to debug your code — read them closely for hints!
 
-Nevertheless, many HTML authors
-thought that this was a good idea and an informal standard sprang up around
-adding `id` attributes on elements to express their "semantic meaning."
 
-```html
-<div id="header">
-  <div class="wrapper">...</div>
-</div>
-```
+## Viewing Your Work in the Browser
 
-When the W3C (the organization that oversees the specifications for HTML and
-CSS) started writing the specification for HTML5 they wanted to create new
-elements that would eliminate the need to label so many `div` elements. The
-goals were to make the code more readable for developers and more descriptive
-for browsers. It turned out that many developers were already using the same
-names to label their elements, such as `id="header"`, `id="footer"`, `id="nav"`,
-`class="article"`, etc. So HTML5 provided semantic elements that explicitly
-described those functions for developers to use instead.
+While working through these assignments, your general workflow should center on
+writing code in the text editor and periodically running the test suite in the
+terminal to check your work.
 
-We once used to have to identify a `div` as our header section.
+Another great way to track your progress is to open up the HTML document in your
+browser and watch how each change you make in the text editor affects the visual
+layout in the browser. Do that by running the `httpserver` command in the browser
+and then copying the URL from the terminal and then pasting that into your web 
+browser followed by the path to the file you want to view.
 
-```html
-<div id="header">...</div>
-```
+Once you have the HTML document open in your browser, you can make changes to it
+in the text editor, save the file, refresh the page in the browser, and see the
+changes instantly.
 
-Now we use the `header` element.
+## Addtional Resources
 
-```html
-<header></header>
-```
+* [Mozilla Developer Network: HTML `<a>` Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 
-Why do we call these _semantic_ elements? Semantic elements are elements that
-we use when the content within the element all has the same related _meaning_.
-In our `header` example above, all the content we would put within the `header`
-element would relate to introductory content, such as titles or navigation.
 
-## Demonstrate HTML5 Semantic Element Use
+## Summary
 
-Let's take a layout that uses `div` elements and convert it to use semantic
-elements instead. This is the markup we begin with:
+Here we saw how an attribute helps the `a` tag do its job, which is to link to another location. Now we can go on to explore some additional HTML tags.
 
-```html
-<div class="wrapper">
-  <div id="header">
-     <div id="nav">...</div>
-  </div>
-  <div id="main">
-    <div id="music">
-      <div id="rock">...</div>
-      <div id="jazz">...</div>
-    </div>
-  </div>
-  <div id="aside">...</div>
-  <div id="footer">...</div>
-</div>
-```
-
-Now we'll replace each instance of a `div` with a semantic element that matches
-the type of content we want it to contain.
-
-```html
-<div class="wrapper">
-  <header>
-     <nav>...</nav>
-  </header>
-  <main>
-    <section id="music">
-      <article id="rock">...</article>
-      <article id="jazz">...</article>
-    </section>
-  </main>
-  <aside>...</aside>
-  <footer>...</footer>
-</div>
-```
-
-Notice that in cases where the content within the element is not semantically
-related or we have the need to create a generic box such as the `wrapper`, we
-can still use `div` elements as we please. As a developer, keep in mind that
-while these elements are intended for certain content, there are no hard rules
-about how to configure them. You should feel comfortable configuring them in any
-way that makes the most sense to you and best suits your layout needs.
-
-## Conclusion
-
-If the content within an element is all semantically related, it is best
-practice to use the appropriate HTML5 semantic element if one applies. This
-cleans up our code and makes it more readable for developers and more
-descriptive to browsers. There are a variety of semantic elements you can use to
-structure your content, and you can also still use `div` elements to create
-generic boxes or grouping elements as needed.
-
-## Resources
-
-- [Presentation Slides](https://docs.google.com/presentation/d/1tl0aB0EUOhLMi1Xr19UCAUTCY20FRqEDv-oDGg2cTkg/edit?usp=sharing)
-- [HTML5 Semantic Elements Lecture Video](https://www.youtube.com/embed/V28xLFEYaSQ)
-- [Dive into HTML5 - Semantic Elements](http://diveintohtml5.info/semantics.html#new-elements)
-- [MDN - HTML - Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/HTML5-Semantic-Elements' title='HTML5 Semantic Elements'>HTML5 Semantic Elements</a> on Learn.co and start learning to code for free.</p>
+[pview]: http://help.learn.co/the-learn-ide/common-ide-questions/viewing-html-pages-in-the-learn-ide
